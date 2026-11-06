@@ -27,4 +27,4 @@ async function mostrarReporte() {
     }
 }
 
-mostrarReporte()
+await mostrarReporte()

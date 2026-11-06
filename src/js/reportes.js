@@ -41,4 +41,4 @@ async function mostrarReportes() {
     }
 }
 
-mostrarReportes()
+await mostrarReportes()
