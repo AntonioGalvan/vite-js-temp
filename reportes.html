@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reportes</title>
+    <link rel="stylesheet" href="/src/css/reportes.css" />
+</head>
+
+<body>
+    <include src="header.html"></include>
+
+    <main>
+        <h1>Reportes</h1>
+
+        <p id="mensaje-reportes">Cargando reportes...</p>
+
+        <table id="tabla-reportes" hidden>
+            <thead>
+                <tr>
+                    <th scope="col">Título</th>
+                    <th scope="col">Colonia</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Fecha</th>
+                </tr>
+            </thead>
+            <tbody id="body-reportes"></tbody>
+        </table>
+    </main>
+
+    <include src="footer.html"></include>
+
+    <script type="module" src="/src/js/reportes.js"></script>
+</body>
+
+</html>

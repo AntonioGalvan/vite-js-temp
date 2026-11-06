@@ -1,0 +1,36 @@
+<!doctype html>
+<!--
+    Página de detalle de un reporte: se abre desde la lista con reporte.html?id=1
+    Si tu sistema no tiene detalle, borra este archivo, src/js/reporte.js y src/css/reporte.css
+-->
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reporte</title>
+    <link rel="stylesheet" href="/src/css/reporte.css" />
+</head>
+
+<body>
+    <include src="header.html"></include>
+
+    <main>
+        <a href="reportes.html">← Volver a reportes</a>
+
+        <p id="mensaje-reporte">Cargando reporte...</p>
+
+        <article id="detalle-reporte" hidden>
+            <h1 id="titulo-reporte">Reporte</h1>
+            <p>Colonia: <span id="colonia-reporte"></span></p>
+            <p>Estado: <span id="estado-reporte"></span></p>
+            <p>Fecha: <span id="fecha-reporte"></span></p>
+        </article>
+    </main>
+
+    <include src="footer.html"></include>
+
+    <script type="module" src="/src/js/reporte.js"></script>
+</body>
+
+</html>
