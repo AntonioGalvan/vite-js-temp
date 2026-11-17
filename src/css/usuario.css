@@ -1,0 +1,13 @@
+@import './global.css';
+
+.perfil {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+}
+
+.avatar-grande {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.2rem;
+}

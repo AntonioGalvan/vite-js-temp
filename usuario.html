@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Usuario · Reporta</title>
+    <link rel="stylesheet" href="/src/css/usuario.css" />
+</head>
+
+<body data-seccion="usuarios">
+    <include src="header.html"></include>
+
+    <main>
+        <a class="volver" href="usuarios.html">← Volver a usuarios</a>
+
+        <div class="tarjeta">
+            <p class="mensaje" id="mensaje-usuario">Cargando usuario...</p>
+
+            <article class="detalle" id="detalle-usuario" hidden>
+                <div class="perfil">
+                    <span class="avatar avatar-grande" id="avatar-detalle"></span>
+                    <div>
+                        <h1 id="nombre-detalle">Usuario</h1>
+                        <p class="subtitulo" id="correo-detalle"></p>
+                    </div>
+                </div>
+
+                <dl class="datos">
+                    <div>
+                        <dt>Rol</dt>
+                        <dd id="rol-detalle"></dd>
+                    </div>
+                    <div>
+                        <dt>Estado</dt>
+                        <dd id="estado-detalle"></dd>
+                    </div>
+                    <div>
+                        <dt>Teléfono</dt>
+                        <dd id="telefono-detalle"></dd>
+                    </div>
+                    <div>
+                        <dt>Registro</dt>
+                        <dd id="registro-detalle"></dd>
+                    </div>
+                </dl>
+            </article>
+        </div>
+    </main>
+
+    <include src="footer.html"></include>
+
+    <script type="module" src="/src/js/usuario.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Usuarios · Reporta</title>
+    <link rel="stylesheet" href="/src/css/usuarios.css" />
+</head>
+
+<body data-seccion="usuarios">
+    <include src="header.html"></include>
+
+    <main>
+        <div class="titulo-pagina">
+            <div>
+                <h1>Usuarios</h1>
+                <p class="subtitulo">Personas registradas en la plataforma.</p>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <p class="mensaje" id="mensaje-usuarios">Cargando usuarios...</p>
+
+            <table class="tabla" id="tabla-usuarios" hidden>
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Rol</th>
+                        <th scope="col">Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="body-usuarios"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <include src="footer.html"></include>
+
+    <script type="module" src="/src/js/usuarios.js"></script>
+</body>
+
+</html>

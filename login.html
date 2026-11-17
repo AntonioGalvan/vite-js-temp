@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Iniciar sesión · Reporta</title>
+    <link rel="stylesheet" href="/src/css/login.css" />
+</head>
+
+<body>
+    <main>
+        <div class="tarjeta acceso">
+            <a class="marca" href="index.html">
+                <img src="/src/img/logo.svg" alt="" />
+                Reporta
+            </a>
+
+            <h1>Inicia sesión</h1>
+            <p class="subtitulo">Entra con tu correo o nombre de usuario.</p>
+
+            <form class="formulario" id="form-login">
+                <label>
+                    Correo o usuario
+                    <input type="text" name="usuario" placeholder="juan.perez@example.com" autocomplete="username" required />
+                </label>
+
+                <label>
+                    Contraseña
+                    <input type="password" name="contrasena" placeholder="••••••••" autocomplete="current-password" required />
+                </label>
+
+                <a class="boton" href="home.html">Entrar</a>
+            </form>
+        </div>
+
+        <a class="volver" href="index.html">← Volver al inicio</a>
+    </main>
+</body>
+
+</html>

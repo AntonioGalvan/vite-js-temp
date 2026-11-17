@@ -1,0 +1,8 @@
+@import './global.css';
+
+.nombre {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    white-space: nowrap;
+}

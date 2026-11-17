@@ -2,23 +2,50 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inicio</title>
-  <link rel="stylesheet" href="/src/css/index.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Reporta · Reportes de agua en tu colonia</title>
+    <link rel="stylesheet" href="/src/css/index.css" />
 </head>
 
 <body>
-  <include src="header.html"></include>
+    <include src="header-publico.html"></include>
 
-  <main>
-    <h1>Hola</h1>
-    <p id="mensaje"></p>
-  </main>
+    <main>
+        <section class="portada">
+            <span class="sobretitulo">Reportes ciudadanos</span>
+            <h1>Lo que pasa en tu colonia, atendido a tiempo.</h1>
+            <p class="subtitulo">
+                Reporta fugas, falta de agua o daños en la red y sigue su estado
+                hasta que alguien lo resuelva.
+            </p>
+            <div class="acciones">
+                <a class="boton" href="login.html">Iniciar sesión</a>
+                <a class="boton boton-secundario" href="#como-funciona">Cómo funciona</a>
+            </div>
+        </section>
 
-  <include src="footer.html"></include>
+        <section class="pasos" id="como-funciona">
+            <article class="tarjeta paso">
+                <span class="numero">1</span>
+                <h2>Reporta</h2>
+                <p>Describe el problema y en qué colonia está.</p>
+            </article>
+            <article class="tarjeta paso">
+                <span class="numero">2</span>
+                <h2>Da seguimiento</h2>
+                <p>Mira si tu reporte está pendiente, en proceso o atendido.</p>
+            </article>
+            <article class="tarjeta paso">
+                <span class="numero">3</span>
+                <h2>Resuelve</h2>
+                <p>El equipo técnico atiende los reportes en orden.</p>
+            </article>
+        </section>
+    </main>
 
-  <script type="module" src="/src/js/main.js"></script>
+    <include src="footer.html"></include>
 </body>
 
 </html>

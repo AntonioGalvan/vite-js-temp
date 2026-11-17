@@ -1,5 +1,15 @@
 @import './global.css';
 
-#detalle-reporte {
-    margin-top: 1rem;
+.cabecera {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.descripcion {
+    margin-top: 0.85rem;
+    max-width: 60ch;
+    color: var(--texto-suave);
+    font-size: 1.05rem;
 }

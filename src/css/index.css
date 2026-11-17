@@ -1,5 +1,63 @@
-@import "./global.css";
+@import './global.css';
 
-h1 {
-  color: #1d4ed8;
+.portada {
+    max-width: 680px;
+    margin: 3.5rem auto 4rem;
+    text-align: center;
+}
+
+.sobretitulo {
+    display: inline-block;
+    margin-bottom: 1.25rem;
+    padding: 0.3rem 0.85rem;
+    border-radius: 999px;
+    background: var(--acento-suave);
+    color: var(--acento);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.portada h1 {
+    font-size: clamp(2.1rem, 5vw, 3.2rem);
+    letter-spacing: -0.035em;
+}
+
+.portada .subtitulo {
+    max-width: 520px;
+    margin: 1.1rem auto 0;
+    font-size: 1.1rem;
+}
+
+.acciones {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.pasos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+}
+
+.paso {
+    padding: 1.75rem;
+}
+
+.paso p {
+    margin-top: 0.4rem;
+    color: var(--texto-suave);
+}
+
+.numero {
+    display: inline-grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    background: var(--acento-suave);
+    color: var(--acento);
+    font-weight: 700;
 }
