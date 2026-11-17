@@ -23,20 +23,26 @@
             <form class="formulario" id="form-login">
                 <label>
                     Correo o usuario
-                    <input type="text" name="usuario" placeholder="juan.perez@example.com" autocomplete="username" required />
+                    <input type="email" name="email" placeholder="juan.perez@example.com" autocomplete="username"
+                        required />
                 </label>
 
                 <label>
                     Contraseña
-                    <input type="password" name="contrasena" placeholder="••••••••" autocomplete="current-password" required />
+                    <input type="password" name="password" placeholder="••••••••" autocomplete="current-password"
+                        required />
                 </label>
 
-                <a class="boton" href="home.html">Entrar</a>
+                <p class="error" id="error-login" hidden></p>
+
+                <button class="boton" type="submit">Entrar</button>
             </form>
         </div>
 
         <a class="volver" href="index.html">← Volver al inicio</a>
     </main>
+
+    <script type="module" src="/src/js/login.js"></script>
 </body>
 
 </html>

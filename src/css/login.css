@@ -62,3 +62,16 @@ main {
 .volver {
     margin: 0;
 }
+
+.error {
+    padding: 0.7rem 0.85rem;
+    border-radius: 10px;
+    background: #fbeaea;
+    color: #9b1c1c;
+    font-size: 0.9rem;
+}
+
+.boton:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}

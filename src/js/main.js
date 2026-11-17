@@ -1,3 +1,29 @@
+import { obtenerUsuario, cerrarSesion } from './sesion.js'
+import { puedeEntrar } from './permisos.js'
+
+const usuario = obtenerUsuario()
+
+if (!usuario) {
+    location.replace('login.html')
+    throw new Error('Sin sesión')
+}
+
+const paginaActual = location.pathname.split('/').pop().replace('.html', '')
+
+if (!puedeEntrar(paginaActual, usuario.role)) {
+    location.replace('home.html')
+    throw new Error('Sin permiso para esta página')
+}
+
+document.querySelector('#nombre-usuario').textContent = usuario.name
+document.querySelector('#avatar-usuario').textContent = iniciales(usuario.name)
+document.querySelector('#cerrar-sesion').addEventListener('click', cerrarSesion)
+
+for (const enlace of document.querySelectorAll('.menu a')) {
+    const pagina = enlace.getAttribute('href').replace('.html', '')
+    if (!puedeEntrar(pagina, usuario.role)) enlace.remove()
+}
+
 const seccion = document.body.dataset.seccion
 document.querySelector(`.menu a[data-seccion="${seccion}"]`)?.classList.add('activo')
 

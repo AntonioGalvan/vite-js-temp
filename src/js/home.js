@@ -1,11 +1,15 @@
 import { formatearFecha, crearEtiqueta } from './main.js'
 import { obtenerReportes, obtenerUsuarios } from './datos.js'
+import { api } from './api.js'
 
 const mensaje = document.querySelector('#mensaje-recientes')
 const lista = document.querySelector('#lista-recientes')
 
 async function mostrarResumen() {
     try {
+        const yo = await api.get('/api/auth/yo')
+        document.querySelector('#saludo-nombre').textContent = yo.name.split(' ')[0]
+
         const reportes = await obtenerReportes()
         const usuarios = await obtenerUsuarios()
 
