@@ -1,7 +1,22 @@
 <header class="encabezado">
-    <nav class="menu">
-        <a href="index.html">Inicio</a>
-        <a href="reportes.html">Reportes</a>
-        <a href="contact.html">Contacto</a>
-    </nav>
+    <div class="encabezado-contenido">
+        <a class="marca" href="home.html">
+            <img src="/src/img/logo.svg" alt="" />
+            Reporta
+        </a>
+
+        <nav class="menu">
+            <a href="home.html" data-seccion="home">Inicio</a>
+            <a href="usuarios.html" data-seccion="usuarios">Usuarios</a>
+            <a href="reportes.html" data-seccion="reportes">Reportes</a>
+        </nav>
+
+        <div class="sesion">
+            <span class="usuario-actual">
+                <span class="avatar" id="avatar-usuario"></span>
+                <span id="nombre-usuario"></span>
+            </span>
+            <button class="boton boton-secundario boton-chico" id="cerrar-sesion" type="button">Cerrar sesión</button>
+        </div>
+    </div>
 </header>

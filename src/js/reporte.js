@@ -1,10 +1,10 @@
+import { formatearFecha, crearEtiqueta } from './main.js'
 import { obtenerReporte } from './datos.js'
 
 const mensaje = document.querySelector('#mensaje-reporte')
 const detalle = document.querySelector('#detalle-reporte')
 
 async function mostrarReporte() {
-    // Lee el id de la dirección de reporte.html?id=2 
     const id = Number(new URLSearchParams(location.search).get('id'))
 
     try {
@@ -15,10 +15,13 @@ async function mostrarReporte() {
             return
         }
 
+        document.title = `${reporte.titulo} · Reporta`
         document.querySelector('#titulo-reporte').textContent = reporte.titulo
+        document.querySelector('#estado-reporte').append(crearEtiqueta(reporte.estado))
+        document.querySelector('#descripcion-reporte').textContent = reporte.descripcion
         document.querySelector('#colonia-reporte').textContent = reporte.colonia
-        document.querySelector('#estado-reporte').textContent = reporte.estado
-        document.querySelector('#fecha-reporte').textContent = reporte.fecha
+        document.querySelector('#fecha-reporte').textContent = formatearFecha(reporte.fecha)
+        document.querySelector('#folio-reporte').textContent = `#${String(reporte.id).padStart(4, '0')}`
 
         mensaje.hidden = true
         detalle.hidden = false

@@ -1,0 +1,77 @@
+@import './global.css';
+
+body {
+    background:
+        radial-gradient(circle at 20% 10%, var(--acento-suave), transparent 40%),
+        var(--fondo);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+}
+
+.acceso {
+    width: 100%;
+    max-width: 400px;
+    padding: 2.25rem;
+}
+
+.acceso .marca {
+    margin-bottom: 2rem;
+}
+
+.formulario {
+    display: grid;
+    gap: 1.1rem;
+    margin-top: 1.75rem;
+}
+
+.formulario label {
+    display: grid;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.formulario input {
+    padding: 0.7rem 0.85rem;
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    background: var(--fondo);
+    color: var(--texto);
+    font: inherit;
+    font-weight: 400;
+}
+
+.formulario input:focus {
+    outline: none;
+    border-color: var(--acento);
+    background: var(--superficie);
+    box-shadow: 0 0 0 3px var(--acento-suave);
+}
+
+.formulario .boton {
+    margin-top: 0.4rem;
+    padding: 0.75rem;
+}
+
+.volver {
+    margin: 0;
+}
+
+.error {
+    padding: 0.7rem 0.85rem;
+    border-radius: 10px;
+    background: #fbeaea;
+    color: #9b1c1c;
+    font-size: 0.9rem;
+}
+
+.boton:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}

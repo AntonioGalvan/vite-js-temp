@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Inicio · Reporta</title>
+    <link rel="stylesheet" href="/src/css/home.css" />
+</head>
+
+<body data-seccion="home">
+    <include src="header.html"></include>
+
+    <main>
+        <div class="titulo-pagina">
+            <div>
+                <h1>Hola, <span id="saludo-nombre"></span></h1>
+                <p class="subtitulo">Esto es lo que pasa hoy en Reporta.</p>
+            </div>
+        </div>
+
+        <section class="resumen">
+            <div class="tarjeta dato">
+                <span class="dato-etiqueta">Reportes</span>
+                <strong id="total-reportes">–</strong>
+            </div>
+            <div class="tarjeta dato">
+                <span class="dato-etiqueta">Pendientes</span>
+                <strong id="total-pendientes">–</strong>
+            </div>
+            <div class="tarjeta dato">
+                <span class="dato-etiqueta">Usuarios</span>
+                <strong id="total-usuarios">–</strong>
+            </div>
+        </section>
+
+        <section class="modulos">
+            <a class="tarjeta modulo" href="usuarios.html">
+                <h2>Usuarios</h2>
+                <p>Quién usa la plataforma y con qué rol.</p>
+                <span class="ir">Ver usuarios →</span>
+            </a>
+            <a class="tarjeta modulo" href="reportes.html">
+                <h2>Reportes</h2>
+                <p>Todos los reportes y en qué estado van.</p>
+                <span class="ir">Ver reportes →</span>
+            </a>
+        </section>
+
+        <section class="tarjeta recientes">
+            <h2>Reportes recientes</h2>
+            <p class="mensaje" id="mensaje-recientes">Cargando reportes...</p>
+            <ul class="lista" id="lista-recientes"></ul>
+        </section>
+    </main>
+
+    <include src="footer.html"></include>
+
+    <script type="module" src="/src/js/home.js"></script>
+</body>
+
+</html>
