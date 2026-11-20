@@ -10,11 +10,6 @@ async function mostrarReporte() {
     try {
         const reporte = await obtenerReporte(id)
 
-        if (!reporte) {
-            mensaje.textContent = 'No existe ese reporte.'
-            return
-        }
-
         document.title = `${reporte.titulo} · Reporta`
         document.querySelector('#titulo-reporte').textContent = reporte.titulo
         document.querySelector('#estado-reporte').append(crearEtiqueta(reporte.estado))
@@ -22,11 +17,12 @@ async function mostrarReporte() {
         document.querySelector('#colonia-reporte').textContent = reporte.colonia
         document.querySelector('#fecha-reporte').textContent = formatearFecha(reporte.fecha)
         document.querySelector('#folio-reporte').textContent = `#${String(reporte.id).padStart(4, '0')}`
+        document.querySelector('#editar-reporte').href = `reporte-form.html?id=${reporte.id}`
 
         mensaje.hidden = true
         detalle.hidden = false
-    } catch {
-        mensaje.textContent = 'No se pudo cargar el reporte. Intenta más tarde.'
+    } catch (error) {
+        mensaje.textContent = error.message
     }
 }
 

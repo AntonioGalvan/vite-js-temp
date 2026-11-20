@@ -1,0 +1,22 @@
+@import './global.css';
+
+.contenido-form {
+    max-width: 720px;
+    padding: 2rem;
+}
+
+.formulario {
+    margin-top: 1.5rem;
+}
+
+.fila {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.1rem;
+}
+
+.acciones {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.4rem;
+}

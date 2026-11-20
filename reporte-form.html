@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Nuevo reporte · Reporta</title>
+    <link rel="stylesheet" href="/src/css/reporte-form.css" />
+</head>
+
+<body data-seccion="reportes">
+    <include src="header.html"></include>
+
+    <main>
+        <a class="volver" id="volver" href="reportes.html">← Volver a reportes</a>
+
+        <div class="tarjeta contenido-form">
+            <h1 id="titulo-form">Nuevo reporte</h1>
+            <p class="subtitulo">Llena los datos del problema.</p>
+
+            <form class="formulario" id="form-reporte">
+                <label>
+                    Título
+                    <input name="titulo" placeholder="Fuga en calle 5 de Mayo" required />
+                </label>
+
+                <label>
+                    Descripción
+                    <textarea name="descripcion" rows="4" placeholder="¿Qué está pasando y desde cuándo?" required></textarea>
+                </label>
+
+                <div class="fila">
+                    <label>
+                        Colonia
+                        <select name="colonia" required>
+                            <option value="">Selecciona una colonia</option>
+                            <option>Centro</option>
+                            <option>Las Flores</option>
+                            <option>San José</option>
+                            <option>La Paz</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Estado
+                        <select name="estado" required>
+                            <option>Pendiente</option>
+                            <option>En proceso</option>
+                            <option>Atendido</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Fecha
+                        <input type="date" name="fecha" required />
+                    </label>
+                </div>
+
+                <p class="error" id="error-reporte" hidden></p>
+
+                <div class="acciones">
+                    <button class="boton" type="submit">Guardar</button>
+                    <a class="boton boton-secundario" id="cancelar" href="reportes.html">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <include src="footer.html"></include>
+
+    <script type="module" src="/src/js/reporte-form.js"></script>
+</body>
+
+</html>
