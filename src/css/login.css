@@ -25,33 +25,7 @@ main {
 }
 
 .formulario {
-    display: grid;
-    gap: 1.1rem;
     margin-top: 1.75rem;
-}
-
-.formulario label {
-    display: grid;
-    gap: 0.4rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.formulario input {
-    padding: 0.7rem 0.85rem;
-    border: 1px solid var(--borde);
-    border-radius: 10px;
-    background: var(--fondo);
-    color: var(--texto);
-    font: inherit;
-    font-weight: 400;
-}
-
-.formulario input:focus {
-    outline: none;
-    border-color: var(--acento);
-    background: var(--superficie);
-    box-shadow: 0 0 0 3px var(--acento-suave);
 }
 
 .formulario .boton {
@@ -61,17 +35,4 @@ main {
 
 .volver {
     margin: 0;
-}
-
-.error {
-    padding: 0.7rem 0.85rem;
-    border-radius: 10px;
-    background: #fbeaea;
-    color: #9b1c1c;
-    font-size: 0.9rem;
-}
-
-.boton:disabled {
-    opacity: 0.6;
-    cursor: wait;
 }

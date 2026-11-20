@@ -47,8 +47,8 @@ async function mostrarUsuarios() {
 
         mensaje.hidden = true
         tabla.hidden = false
-    } catch {
-        mensaje.textContent = 'No se pudieron cargar los usuarios. Intenta más tarde.'
+    } catch (error) {
+        mensaje.textContent = error.message
     }
 }
 

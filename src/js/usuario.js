@@ -10,11 +10,6 @@ async function mostrarUsuario() {
     try {
         const usuario = await obtenerUsuario(id)
 
-        if (!usuario) {
-            mensaje.textContent = 'No existe ese usuario.'
-            return
-        }
-
         document.title = `${usuario.nombre} · Reporta`
         document.querySelector('#avatar-detalle').textContent = iniciales(usuario.nombre)
         document.querySelector('#nombre-detalle').textContent = usuario.nombre
@@ -26,8 +21,8 @@ async function mostrarUsuario() {
 
         mensaje.hidden = true
         detalle.hidden = false
-    } catch {
-        mensaje.textContent = 'No se pudo cargar el usuario. Intenta más tarde.'
+    } catch (error) {
+        mensaje.textContent = error.message
     }
 }
 

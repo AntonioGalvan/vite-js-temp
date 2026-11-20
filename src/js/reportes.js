@@ -38,8 +38,8 @@ async function mostrarReportes() {
 
         mensaje.hidden = true
         tabla.hidden = false
-    } catch {
-        mensaje.textContent = 'No se pudieron cargar los reportes. Intenta más tarde.'
+    } catch (error) {
+        mensaje.textContent = error.message
     }
 }
 

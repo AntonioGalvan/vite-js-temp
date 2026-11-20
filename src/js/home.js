@@ -40,8 +40,8 @@ async function mostrarResumen() {
         }
 
         mensaje.hidden = true
-    } catch {
-        mensaje.textContent = 'No se pudo cargar el resumen. Intenta más tarde.'
+    } catch (error) {
+        mensaje.textContent = error.message
     }
 }
 
