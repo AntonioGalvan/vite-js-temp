@@ -14,7 +14,6 @@ function mostrarError(texto) {
 async function cargarReporte() {
     document.title = 'Editar reporte · Reporta'
     document.querySelector('#titulo-form').textContent = 'Editar reporte'
-    document.querySelector('#volver').href = `reporte.html?id=${id}`
     document.querySelector('#cancelar').href = `reporte.html?id=${id}`
 
     try {

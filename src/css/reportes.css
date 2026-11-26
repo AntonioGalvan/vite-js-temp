@@ -1,6 +1,21 @@
 @import './global.css';
 
-.tabla td:last-child {
+.tabla td:nth-child(4) {
     color: var(--texto-suave);
+    white-space: nowrap;
+}
+
+.acciones-fila {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
     white-space: nowrap;
 }

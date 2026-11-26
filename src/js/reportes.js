@@ -1,9 +1,55 @@
 import { formatearFecha, crearEtiqueta } from './main.js'
-import { obtenerReportes } from './datos.js'
+import { obtenerReportes, eliminarReporte } from './datos.js'
+import { puedeEntrar } from './permisos.js'
+import { obtenerUsuario as obtenerSesion } from './sesion.js'
 
 const tabla = document.querySelector('#tabla-reportes')
 const cuerpo = document.querySelector('#body-reportes')
 const mensaje = document.querySelector('#mensaje-reportes')
+const puedeEliminar = puedeEntrar('eliminar-reporte', obtenerSesion().role)
+
+function crearAcciones(reporte, fila) {
+    const celda = document.createElement('td')
+    const acciones = document.createElement('div')
+    acciones.className = 'acciones-fila'
+
+    const editar = document.createElement('a')
+    editar.className = 'boton boton-secundario boton-chico'
+    editar.href = `reporte-form.html?id=${reporte.id}`
+    editar.textContent = 'Editar'
+    acciones.append(editar)
+
+    if (puedeEliminar) {
+        const eliminar = document.createElement('button')
+        eliminar.type = 'button'
+        eliminar.className = 'boton boton-peligro boton-chico'
+        eliminar.textContent = 'Eliminar'
+
+        eliminar.addEventListener('click', async () => {
+            if (!confirm(`¿Eliminar el reporte "${reporte.titulo}"? Esta acción no se puede deshacer.`)) return
+
+            eliminar.disabled = true
+            try {
+                await eliminarReporte(reporte.id)
+                fila.remove()
+
+                if (cuerpo.children.length === 0) {
+                    tabla.hidden = true
+                    mensaje.textContent = 'Todavía no hay reportes.'
+                    mensaje.hidden = false
+                }
+            } catch (e) {
+                alert(e.message)
+                eliminar.disabled = false
+            }
+        })
+
+        acciones.append(eliminar)
+    }
+
+    celda.append(acciones)
+    return celda
+}
 
 async function mostrarReportes() {
     try {
@@ -32,7 +78,7 @@ async function mostrarReportes() {
             const celdaFecha = document.createElement('td')
             celdaFecha.textContent = formatearFecha(reporte.fecha)
 
-            fila.append(celdaTitulo, celdaColonia, celdaEstado, celdaFecha)
+            fila.append(celdaTitulo, celdaColonia, celdaEstado, celdaFecha, crearAcciones(reporte, fila))
             cuerpo.append(fila)
         }
 

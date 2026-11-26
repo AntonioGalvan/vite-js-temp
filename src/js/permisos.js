@@ -1,6 +1,7 @@
 export const permisos = {
-    usuarios: ['usuario'],
-    usuario: ['usuario'],
+    usuarios: ['admin'],
+    usuario: ['admin'],
+    'eliminar-reporte': ['admin'],
 }
 
 export function puedeEntrar(pagina, rol) {

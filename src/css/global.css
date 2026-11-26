@@ -190,6 +190,14 @@ a:hover {
     color: var(--texto);
 }
 
+.boton-peligro {
+    background: #b42318;
+}
+
+.boton-peligro:hover {
+    background: #912018;
+}
+
 .boton-chico {
     padding: 0.4rem 0.8rem;
     font-size: 0.85rem;
