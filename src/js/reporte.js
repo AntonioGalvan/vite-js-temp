@@ -1,7 +1,8 @@
+import './proteccion.js'
 import { formatearFecha, crearEtiqueta } from './main.js'
 import { obtenerReporte, eliminarReporte } from './datos.js'
 import { puedeEntrar } from './permisos.js'
-import { obtenerUsuario as obtenerSesion } from './sesion.js'
+import { obtenerUsuario } from './sesion.js'
 
 const mensaje = document.querySelector('#mensaje-reporte')
 const detalle = document.querySelector('#detalle-reporte')
@@ -33,7 +34,7 @@ function configurarEliminar(reporte) {
     const boton = document.querySelector('#eliminar-reporte')
     const error = document.querySelector('#error-reporte')
 
-    if (!puedeEntrar('eliminar-reporte', obtenerSesion().role)) {
+    if (!puedeEntrar('eliminar-reporte', obtenerUsuario().role)) {
         boton.remove()
         return
     }

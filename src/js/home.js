@@ -1,8 +1,9 @@
+import './proteccion.js'
 import { formatearFecha, crearEtiqueta } from './main.js'
 import { obtenerReportes, obtenerUsuarios } from './datos.js'
 import { api } from './api.js'
 import { puedeEntrar } from './permisos.js'
-import { obtenerUsuario as obtenerSesion } from './sesion.js'
+import { obtenerUsuario } from './sesion.js'
 
 const mensaje = document.querySelector('#mensaje-recientes')
 const lista = document.querySelector('#lista-recientes')
@@ -19,7 +20,7 @@ async function mostrarResumen() {
         document.querySelector('#total-reportes').textContent = reportes.length
         document.querySelector('#total-pendientes').textContent = pendientes.length
 
-        if (puedeEntrar('usuarios', obtenerSesion().role)) {
+        if (puedeEntrar('usuarios', obtenerUsuario().role)) {
             const usuarios = await obtenerUsuarios()
             document.querySelector('#total-usuarios').textContent = usuarios.length
         } else {
