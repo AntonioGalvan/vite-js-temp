@@ -1,12 +1,13 @@
+import './proteccion.js'
 import { formatearFecha, crearEtiqueta } from './main.js'
 import { obtenerReportes, eliminarReporte } from './datos.js'
 import { puedeEntrar } from './permisos.js'
-import { obtenerUsuario as obtenerSesion } from './sesion.js'
+import { obtenerUsuario } from './sesion.js'
 
 const tabla = document.querySelector('#tabla-reportes')
 const cuerpo = document.querySelector('#body-reportes')
 const mensaje = document.querySelector('#mensaje-reportes')
-const puedeEliminar = puedeEntrar('eliminar-reporte', obtenerSesion().role)
+const puedeEliminar = puedeEntrar('eliminar-reporte', obtenerUsuario().role)
 
 function crearAcciones(reporte, fila) {
     const celda = document.createElement('td')

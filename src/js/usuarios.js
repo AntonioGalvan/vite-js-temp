@@ -1,3 +1,4 @@
+import './proteccion.js'
 import { iniciales, crearEtiqueta } from './main.js'
 import { obtenerUsuarios } from './datos.js'
 

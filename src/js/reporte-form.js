@@ -1,3 +1,4 @@
+import './proteccion.js'
 import './main.js'
 import { obtenerReporte, crearReporte, actualizarReporte } from './datos.js'
 
